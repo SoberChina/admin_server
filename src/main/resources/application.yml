@@ -1,0 +1,45 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: server
+  boot:
+    admin:
+      username: "${security.user.name}"       #These two are needed so that the client
+      password: "${security.user.password}"   #can register at the protected server api
+      notify:
+        mail:
+#          to: 202858461@qq.com
+#          from: 724964028@qq.com
+#          enabled: false
+#          ignore-changes : UNKNOWN:UP
+#      url: http://localhost:8088
+      client:
+        metadata:
+          user.name: "${security.user.name}"
+          user.password: "${security.user.password}"
+      discovery:
+        enabled : false
+      routes:
+        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
+  mail:
+#    host: smtp.qq.com
+#    username: 724964028@qq.com
+#    password: whbkiznewefbbbjh
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: true
+            required: true
+info:
+  version: 1.0.0
+  info: 监控测试界面
+security:
+  user:
+    name: test
+    password: test
+#spring.boot.admin.turbine:
+#  clusters: test
+#  url: http://localhost:8080/turbine.stream
