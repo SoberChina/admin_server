@@ -2,7 +2,7 @@ server:
   port: 8088
 spring:
   application:
-    name: server
+#    name: server
   boot:
     admin:
       username: "${security.user.name}"       #These two are needed so that the client
@@ -40,6 +40,7 @@ security:
   user:
     name: test
     password: test
+    #链接turbine 服务
 #spring.boot.admin.turbine:
 #  clusters: test
 #  url: http://localhost:8080/turbine.stream

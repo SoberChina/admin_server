@@ -32,7 +32,11 @@
         \#应用启动后自动执行周期性的注册任务
         spring.boot.admin.auto-registration=true
         spring.boot.admin.client.name=goods-card
+        \#\#默认是false，意味着注册的时候，将会使用机器名进行注册，当设置为true的时候，将会用ip进行注册。
+        spring.boot.admin.client.prefer-ip=true
         info.version=1.0.0
         info.info=\u76d1\u63a7\u6d4b\u8bd5\u5de5\u5177
+        \#\# admin 监控点的命名，如果你不想使用Admin自带的UI，你可能需要在这里重新定义他们的名字。
+        spring.boot.admin.routes.endpoints=env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
        ...
   
