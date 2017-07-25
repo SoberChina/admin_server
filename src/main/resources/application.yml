@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  port: 8080
 spring:
   application:
 #    name: server
@@ -8,7 +8,10 @@ spring:
       username: "${security.user.name}"       #These two are needed so that the client
       password: "${security.user.password}"   #can register at the protected server api
       notify:
-        mail:
+      monitor:
+        period:200.000
+        status-lifetime:200.000
+      mail:
 #          to: 202858461@qq.com
 #          from: 724964028@qq.com
 #          enabled: false
@@ -20,8 +23,8 @@ spring:
           user.password: "${security.user.password}"
       discovery:
         enabled : false
-      routes:
-        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
+#      routes:
+#        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
   mail:
 #    host: smtp.qq.com
 #    username: 724964028@qq.com
@@ -38,8 +41,8 @@ info:
   info: 监控测试界面
 security:
   user:
-    name: test
-    password: test
+    name: goodsCenter
+    password: goodsCenter2017
     #链接turbine 服务
 #spring.boot.admin.turbine:
 #  clusters: test

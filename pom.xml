@@ -11,12 +11,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
-    <spring.boot.admin.version>1.5.0</spring.boot.admin.version>
+    <spring.boot.admin.version>1.5.2</spring.boot.admin.version>
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.1.RELEASE</version>
+    <version>1.5.3.RELEASE</version>
   </parent>
   <dependencies>
     <!--配置好mail 打开 -->
