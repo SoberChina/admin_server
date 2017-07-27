@@ -41,5 +41,9 @@
         info.info=\u76d1\u63a7\u6d4b\u8bd5\u5de5\u5177
         ## admin 监控点的命名，如果你不想使用Admin自带的UI，你可能需要在这里重新定义他们的名字。
         spring.boot.admin.routes.endpoints=env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
+        ##关掉安全认证
+        management.security.enabled=false
+        ##监控端口
+        management.port=10111
        ```
   
