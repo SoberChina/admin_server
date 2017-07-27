@@ -1,6 +1,6 @@
 node {
     def img='registry.wepiao.com/maven:3.3.9-jdk-8'
-    def cmd='mvn clean checkstyle:checkstyle pmd:pmd compile findbugs:findbugs  -Dmaven.test.failure.ignore=true package -U'
+    def cmd='mvn clean checkstyle:checkstyle pmd:pmd compile findbugs:findbugs  -Dmaven.test.failure.ignore=true package'
     stage('Checkout.') {
         checkout scm
         sh 'checkout'
