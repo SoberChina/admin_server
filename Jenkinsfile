@@ -17,9 +17,6 @@ node {
     }
     stage('Publish result') {
         step([$class: 'CheckStylePublisher', pattern: 'target/checkstyle-result.xml'])
-        step([$class: 'FindBugsPublisher', pattern: 'target/findbugsXml.xml'])
-        step([$class: 'PmdPublisher', pattern: 'target/pmd.xml'])
-        step([$class: 'JacocoPublisher', execPattern: 'target/jacoco.exec', exclusionPattern: '**/Messages.class'])
         step([$class: 'JUnitResultArchiver', testResults: 'target/surefire-reports/*.xml'])
     }
 }

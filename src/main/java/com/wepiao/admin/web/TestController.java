@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
+
   @RequestMapping(value = "/hello")
   @HystrixCommand
   public ResponseEntity<String> hello() {
