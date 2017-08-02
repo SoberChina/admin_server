@@ -8,10 +8,13 @@
   <artifactId>wp-goods-admin</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <name>wp-goods-admin</name>
+  <description>goods admin server</description>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
-    <spring.boot.admin.version>1.5.2</spring.boot.admin.version>
+    <spring.boot.admin.version>1.5.3</spring.boot.admin.version>
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -99,7 +102,7 @@
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Dalston.RELEASE</version>
+        <version>Dalston.SR1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
