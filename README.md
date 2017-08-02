@@ -12,6 +12,11 @@
           <groupId>org.jolokia</groupId>
           <artifactId>jolokia-core</artifactId>
         </dependency>
+        <!--version 1.5.X之后需要配置management.security.enabled=false client 默认开启保护，managementServerProrpertis 需要SessionCreationPolicy类，也可单独拿出来配置 -->
+            <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-security</artifactId>
+            </dependency>
     ```
 
   -  **logback 文件添加**
@@ -42,8 +47,11 @@
         ## admin 监控点的命名，如果你不想使用Admin自带的UI，你可能需要在这里重新定义他们的名字。
         spring.boot.admin.routes.endpoints=env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
         ##关掉安全认证
+        #关掉admin server->client 的安全认证
         management.security.enabled=false
-        ##监控端口
-        management.port=10111
+        ##关闭项目的安全认证
+        security.basic.enabled=false
+        ## version 1.5.3 特有配置，（docker 环境下需要传入宿主机的host 和端口）
+        spring.boot.admin.client.service-base-url=http://${HOST}:${PORT}
        ```
   

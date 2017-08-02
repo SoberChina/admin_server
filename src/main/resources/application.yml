@@ -1,8 +1,6 @@
 server:
   port: 8080
 spring:
-  application:
-#    name: server
   boot:
     admin:
       username: "${security.user.name}"       #These two are needed so that the client
@@ -23,6 +21,7 @@ spring:
           user.password: "${security.user.password}"
       discovery:
         enabled : false
+#      context-path: /admin
 #      routes:
 #        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
   mail:
