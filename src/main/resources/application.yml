@@ -23,6 +23,7 @@ spring:
         status-lifetime: 100000
       check:
         period: 200000
+        isCheck: true
 #      context-path: /admin
 #      routes:
 #        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream

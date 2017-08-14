@@ -25,12 +25,25 @@ public class CheckApplicationTaskProperties {
      */
     private int period = 60000;
 
+    /**
+     * 默认关闭检查
+     */
+    private boolean isCheck = false;
+
     public int getPeriod() {
       return period;
     }
 
     public void setPeriod(int period) {
       this.period = period;
+    }
+
+    public boolean isCheck() {
+      return isCheck;
+    }
+
+    public void setCheck(boolean check) {
+      isCheck = check;
     }
   }
 }

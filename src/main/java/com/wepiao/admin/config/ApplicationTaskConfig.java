@@ -47,7 +47,9 @@ public class ApplicationTaskConfig implements CommandLineRunner {
     threadPoolTaskScheduler.scheduleAtFixedRate(new Runnable() {
       @Override
       public void run() {
-        removeHandle();
+        if (checkApplicationTaskProperties.getCheck().isCheck()) {
+          removeHandle();
+        }
       }
     }, checkApplicationTaskProperties.getCheck().getPeriod());
   }

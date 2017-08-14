@@ -6,7 +6,13 @@
       "name": "spring.boot.admin.check.period",
       "type": "java.lang.Integer",
       "description": "检查admin application 节点周期ms",
-      "defaultValue": "true"
+      "defaultValue": 60000
+    },
+    {
+      "name": "spring.boot.admin.check.isCheck",
+      "type": "java.lang.Boolean",
+      "description": "是否检查",
+      "defaultValue": "false"
     }
   ]
 }
