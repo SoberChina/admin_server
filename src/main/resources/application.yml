@@ -6,9 +6,6 @@ spring:
       username: "${security.user.name}"       #These two are needed so that the client
       password: "${security.user.password}"   #can register at the protected server api
       notify:
-      monitor:
-        period:200.000
-        status-lifetime:200.000
       mail:
 #          to: 202858461@qq.com
 #          from: 724964028@qq.com
@@ -20,7 +17,12 @@ spring:
           user.name: "${security.user.name}"
           user.password: "${security.user.password}"
       discovery:
-        enabled : false
+        enabled: false
+      monitor:
+        period: 100000
+        status-lifetime: 100000
+      check:
+        period: 200000
 #      context-path: /admin
 #      routes:
 #        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream
