@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.ResourceAccessException;
@@ -17,6 +18,7 @@ import org.springframework.web.client.ResourceAccessException;
  */
 @Component
 @AutoConfigureAfter(AdminServerCoreConfiguration.class)
+@EnableConfigurationProperties(CheckApplicationTaskProperties.class)
 public class ApplicationTaskConfig implements CommandLineRunner {
 
   private Logger logger = LoggerFactory.getLogger(ApplicationTaskConfig.class);
@@ -25,15 +27,18 @@ public class ApplicationTaskConfig implements CommandLineRunner {
 
   private final ApplicationStore applicationStore;
 
+  private final CheckApplicationTaskProperties checkApplicationTaskProperties;
 
   private final ApplicationOperations applicationOperations;
 
   public ApplicationTaskConfig(ApplicationStore applicationStore,
       ThreadPoolTaskScheduler threadPoolTaskScheduler,
-      ApplicationOperations applicationOperations) {
+      ApplicationOperations applicationOperations,
+      CheckApplicationTaskProperties checkApplicationTaskProperties) {
     this.threadPoolTaskScheduler = threadPoolTaskScheduler;
     this.applicationStore = applicationStore;
     this.applicationOperations = applicationOperations;
+    this.checkApplicationTaskProperties = checkApplicationTaskProperties;
   }
 
   @Override
@@ -42,20 +47,18 @@ public class ApplicationTaskConfig implements CommandLineRunner {
     threadPoolTaskScheduler.scheduleAtFixedRate(new Runnable() {
       @Override
       public void run() {
-
         removeHandle();
-
       }
-    }, 10000);
+    }, checkApplicationTaskProperties.getCheck().getPeriod());
   }
 
   public void removeHandle() {
 
     for (Application application : applicationStore.findAll()) {
-
       if (isDelete(application)) {
         //如果访问不通删除该节点
         applicationStore.delete(application.getId());
+        logger.info("remove : {}", application.toString());
       }
     }
   }
