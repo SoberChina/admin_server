@@ -1,4 +1,4 @@
-package com.wepiao.admin.web;
+package com.test.admin.web;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.http.HttpStatus;

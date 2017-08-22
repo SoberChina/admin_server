@@ -1,4 +1,4 @@
-package com.wepiao.admin.config;
+package com.test.admin.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

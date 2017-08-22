@@ -1,4 +1,4 @@
-package com.wepiao.admin.config;
+package com.test.admin.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

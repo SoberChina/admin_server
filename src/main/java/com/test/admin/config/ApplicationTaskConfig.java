@@ -1,4 +1,4 @@
-package com.wepiao.admin.config;
+package com.test.admin.config;
 
 import de.codecentric.boot.admin.config.AdminServerCoreConfiguration;
 import de.codecentric.boot.admin.model.Application;

@@ -1,4 +1,4 @@
-package com.wepiao.admin.config;//package com.wepiao.datacore.config;
+package com.test.admin.config;//package com.wepiao.datacore.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

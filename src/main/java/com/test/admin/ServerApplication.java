@@ -1,4 +1,4 @@
-package com.wepiao.admin;
+package com.test.admin;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableHystrix
-@ComponentScan(basePackages = {"com.wepiao"})
+@ComponentScan(basePackages = {"com.test"})
 @EnableAdminServer
 @EnableHystrixDashboard
 public class ServerApplication {

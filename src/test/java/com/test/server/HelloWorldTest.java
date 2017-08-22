@@ -1,6 +1,6 @@
-package com.wepiao.server;
+package com.test.server;
 
-import com.wepiao.admin.ServerApplication;
+import com.test.admin.ServerApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
