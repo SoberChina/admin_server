@@ -1,3 +1,8 @@
+# **SBA server 配置** 
+
+```
+当client 配置 spring.boot.admin.auto-deregistration=true 时 服务端可以不进行配置 spring.boot.admin.check.isChecke=false
+```
 # **SBA client 配置** 
   - **pom引入**
       
@@ -42,6 +47,8 @@
         spring.boot.admin.client.name=goods-card
         ##默认是false，意味着注册的时候，将会使用机器名进行注册，当设置为true的时候，将会用ip进行注册。
         spring.boot.admin.client.prefer-ip=true
+        ##服务停止的时候自动销毁实例
+        spring.boot.admin.auto-deregistration=true
         info.version=1.0.0
         info.info=\u76d1\u63a7\u6d4b\u8bd5\u5de5\u5177
         ## admin 监控点的命名，如果你不想使用Admin自带的UI，你可能需要在这里重新定义他们的名字。
